@@ -1,6 +1,6 @@
 #sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
-git clone https://github.com/NFS-Project/local_manifest --depth 1 -b rosy-Xtended-13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest -b 7.1.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/AnGgIt86/local_manifest --depth 1 -b 13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -9,11 +9,11 @@ timeStart
 
 source build/envsetup.sh
 export TZ=Asia/Jakarta
-export KBUILD_BUILD_USER=rosy
-export KBUILD_BUILD_HOST=nfsproject
-export BUILD_USERNAME=rosy
-export BUILD_HOSTNAME=nfsproject
-lunch xtended_rosy-userdebug
+export KBUILD_BUILD_USER=grandppltedx
+export KBUILD_BUILD_HOST=samsung
+export BUILD_USERNAME=grandppltedx
+export BUILD_HOSTNAME=samsung
+lunch aosp_grandppltedx
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
